@@ -1,7 +1,9 @@
+""" Main Class to train model """
+
 import numpy as np
 import gym
 from rl_model import rl_model
-from memory import rl_memory
+from rl_memory import rl_memory
 
 NUM_TRAIN_GAMES = 5000
 NUM_TEST_GAMES = 100

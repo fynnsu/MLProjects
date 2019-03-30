@@ -2,6 +2,9 @@ import numpy as np
 import gym
 from rl_model import rl_model
 
+# *** Change this number to the number of a different model to use that model ***
+MODEL_NUMBER = 441
+
 NUM_TRAIN_GAMES = 25000
 NUM_TEST_GAMES = 100
 NUM_TEST_VISUAL_GAMES = 10
@@ -44,7 +47,7 @@ def run_test(render=False, num_games=NUM_TEST_GAMES):
     return times
 
 
-model.load(441)
+model.load(MODEL_NUMBER)
 
 print(run_test(render=True, num_games=NUM_TEST_VISUAL_GAMES))
 

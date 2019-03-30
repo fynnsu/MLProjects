@@ -1,3 +1,5 @@
+""" Runs the environment with random actions and renders. Useful for visualizing what the environment looks like """
+
 import gym
 
 env = gym.make('CartPole-v1')
