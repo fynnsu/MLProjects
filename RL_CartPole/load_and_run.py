@@ -44,7 +44,7 @@ def run_test(render=False, num_games=NUM_TEST_GAMES):
     return times
 
 
-model.load(300)
+model.load(441)
 
 print(run_test(render=True, num_games=NUM_TEST_VISUAL_GAMES))
 

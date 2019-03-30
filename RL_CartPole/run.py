@@ -42,20 +42,15 @@ def run_test(render=False, num_games=NUM_TEST_GAMES):
                 break
         times.append(j)
         state = env.reset()
-#     print(sides)
+    # Uncomment to print number of occurences of each action
+    # print(sides)
     return times
-
-def softmax(x):
-    """Compute softmax values for each sets of scores in x."""
-    e_x = np.exp(x - np.max(x))
-    return e_x / e_x.sum()
 
 def get_action(state, epsilon):
     if np.random.random() < epsilon:
         return env.action_space.sample()
     else:
         return np.argmax(model.predict([state]), axis=1)[0]
-#         return np.random.choice(2, p=softmax(model.predict([state])[0]))
 
 def run_train():
     loss = 0
@@ -65,7 +60,7 @@ def run_train():
         state = env.reset()
         for j in range(MAX_GAME_STEPS):
             action = get_action(state, epsilon)
-            next_state, reward, done, info = env.step(action)
+            next_state, reward, done, _ = env.step(action)
             
 
             if done:
@@ -78,7 +73,7 @@ def run_train():
 
             if done:
                 break
-        if i > NUM_RANDOM_GAMES and i % 1 == 0:
+        if i > NUM_RANDOM_GAMES :
             loss += model.train(memory.get_batch(BATCH_SIZE))
         if i > NUM_RANDOM_GAMES and i % TEST_FREQUENCY == 0:
             times = run_test()

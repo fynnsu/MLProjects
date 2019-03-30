@@ -1,7 +1,7 @@
 import numpy as np
 
 class rl_memory(object):
-    """description of class"""
+    """Data storage and batch retrieval class for DQN"""
 
     def __init__(self, capacity, batch_size, seed):
         self.capacity = capacity
