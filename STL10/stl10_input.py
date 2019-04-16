@@ -125,12 +125,12 @@ def download_and_extract():
         print('Downloaded', filename)
         tarfile.open(filepath, 'r:gz').extractall(dest_directory)
 
-def save_images(images, labels):
+def save_images(images, labels, data_dir):
     print("Saving images to disk")
     i = 0
     for image in images:
         label = labels[i]
-        directory = './img/' + str(label) + '/'
+        directory = data_dir + str(label) + '/'
         try:
             os.makedirs(directory, exist_ok=True)
         except OSError as exc:
@@ -157,5 +157,16 @@ if __name__ == "__main__":
     labels = read_labels(LABEL_PATH)
     print(labels.shape)
 
+    num_val = 200
+
+    train_x = images[:-200]
+    train_y = labels[:-200]
+
+    val_x = images[-200:]
+    val_y = labels[-200:]
+
+
+
     # save images to disk
-    save_images(images, labels)
+    save_images(train_x, train_y, 'train/')
+    save_images(val_x, val_y, 'val/')
