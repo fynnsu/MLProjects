@@ -1,3 +1,3 @@
 # MNIST Simple Neural Network
 
-An explanation for this code is give at https://www.mlprojecttutorials.com/beginner/mnist/.
+An explanation for this code is given at https://www.fynnschmitt-ulms.ca/projects/mnist-tutorial.

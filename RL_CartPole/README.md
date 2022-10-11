@@ -1,6 +1,6 @@
 # Deep Q-Network CartPole
 
-An explanation for this code is give at https://www.mlprojecttutorials.com/reinforcement%20learning/cartpole/.
+An explanation for this code is not currently available. 
 
 Files:
 - preview_environment.py: Preview cartpole environment

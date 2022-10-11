@@ -1,6 +1,6 @@
 # Transfer Learning - ImageNet to STL10
 
-An explanation for this code is give at https://www.mlprojecttutorials.com/image%20recognition/transfer/.
+An explanation for this code is give at https://www.fynnschmitt-ulms.ca/projects/transfer-learning-tutorial.
 
 Files:
 - transfer_learning.py: main transfer learning class (run this)
